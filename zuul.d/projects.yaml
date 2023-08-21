@@ -1,15 +1,31 @@
 - project:
-    name: ^.*$
-    check:
+    name: ^Pazbear.*$
+    default-branch: main
+    gh_check:
       jobs: []
-    gate:
+    gh_gate:
+      jobs: []
+    gh_post:
+      jobs: []
+    gh_tag:
       jobs: []
 
 - project:
-    name: zuul-config
-    check:
+    name: zuul/zuul-jobs
+    default-branch: master
+
+- project:
+    name: Pazbear/zuul-config
+    default-branch: main
+    gh_check:
       jobs:
         - noop
-    gate:
+    gh_gate:
+      jobs:
+        - noop
+    gh_post:
+      jobs:
+        - noop
+    gh_tag:
       jobs:
         - noop
